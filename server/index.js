@@ -3,8 +3,8 @@ const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // will enable the express server to respond to preflight requests
+app.use(express.json()); // parses incoming JSON requests and puts the parsed data in req.body
 
 const db = mysql.createConnection({
   user: "root",
